@@ -1,9 +1,10 @@
 #Step 5
 
 import random
-
+from replit import clear
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 #Delete this line: word_list = ["ardvark", "baboon", "camel"]
+from hangman_words import word_list #risolve
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
@@ -11,6 +12,8 @@ end_of_game = False
 lives = 6
 
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+from hangman_art import stages, logo
+print (logo)
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
@@ -22,19 +25,25 @@ for _ in range(word_length):
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
+    clear()
 
-    #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    #TODO-4: - If the user has entered a letter they've already guessed, print the letter 
+    # and let them know.
+    if guess in display:
+        print (f"Hai gia indovinato la lettera {guess}")
 
     #Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
 
     #Check if user is wrong.
     if guess not in chosen_word:
-        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let 
+        # them know it's not in the word.
+        print (f"hai messo {guess} che non e in parola. Hai perso una vita")
         lives -= 1
         if lives == 0:
             end_of_game = True
@@ -49,4 +58,6 @@ while not end_of_game:
         print("You win.")
 
     #TODO-2: - Import the stages from hangman_art.py and make this error go away.
+    #fatto piu sopra quando ho importato logo
+    
     print(stages[lives])
