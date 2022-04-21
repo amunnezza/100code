@@ -33,10 +33,19 @@ resources = {
 }
 
 
-
+is_on = True
 
 
 # TODO: 1. Print a Report of caffe machine reource
+while is_on:
+    choice = input ("Cosa vuoi? espresso / latte / cappuccino")
+    if choice == "off":
+        is_on = False #ed esci
+    elif choice == "report":
+        print ("water: 300")
+        print ("milk: 200")
+        print ("coffee:100")
+        print ("money : $ 0")
 
 # TODO : 2 Check if resource are sufficient
 
