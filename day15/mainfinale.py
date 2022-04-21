@@ -56,7 +56,7 @@ def is_transaction_successful(money_received, drink_cost):
     if money_received >= drink_cost:
         change = round(money_received - drink_cost, 2)
         print(f"Here is ${change} in change.")
-        global profit
+        global profit #devi dichiararla come global 
         profit += drink_cost
         return True
     else:
