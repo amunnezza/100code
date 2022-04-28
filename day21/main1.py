@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 import time
 from snake import Snake
+from food import Food
 
 screen = Screen()
 screen.setup( width= 600, height = 600)
@@ -9,6 +10,7 @@ screen.title("My snake game")
 screen.tracer(0) # annulla aggiornamento continuo
 
 snake = Snake()
+food = Food()
 game_is_on = True
 
 screen.listen()
@@ -25,7 +27,11 @@ while game_is_on:
     #assumere la posizione del precedente e cosi via su tutta la catena con il
     #primo che è l'ultimo a muoversi e detta lui la direzione del movimento!!!
     snake.move()
-
+    # how to detect c ollision? usa metodo distance
+    if snake.head.distance (food) < 15:
+        #print ("they collide") # test funzionamento
+        #in realta dovrebbe creare un nuovo pallino
+        
 
 #per girare fai assumere all'ultimo la posizione del precedente e cosi via 
 #cambi il modo di muoversi e se gira gli altri losegueno
