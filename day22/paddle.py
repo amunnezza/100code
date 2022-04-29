@@ -1,17 +1,20 @@
-paddle = Turtle()
-# paddle.shape("square")
-# paddle.color ("white") 
-# paddle.shapesize (stretch_wid=5, stretch_len=1)
-# paddle.penup()
-# paddle.goto(350, 0)
+from turtle import Turtle
 
-# def go_up():
-#     new_y = paddle.ycor() + 20
-#     paddle.goto(paddle.xcor(), new_y)
+class Paddle(Turtle):
 
-# def go_down():
-#     new_y = paddle.ycor() - 20
-#     paddle.goto(paddle.xcor(), new_y)
-# screen.listen()
-# screen.onkey(go_up, "Up")
-# screen.onkey (go_down, "Down")
+    def __init__(self, position):
+        super().__init__()
+        self.shape("square")
+        self.color ("white")
+        self.shapesize (stretch_wid=5, stretch_len=1)
+        self.penup()
+        self.goto(position)
+
+    def go_up(self):
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
+
+    def go_down(self):
+        new_y = self.ycor() - 20
+        self.goto(self.xcor(), new_y)
+    
