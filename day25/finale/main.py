@@ -1,48 +1,32 @@
 import turtle
-import pandas as pd
+import pandas
 
 screen = turtle.Screen()
-screen.title("Us State game")
+screen.title("U.S. States Game")
 image = "./day25/finale/blank_states_img.gif"
 screen.addshape(image)
-
 turtle.shape(image)
 
-# """ def get_mouse_click_coor(x, y):
-#     print (x, y)
-#  """
-#turtle.onscreenclick(get_mouse_click_coor)
-#per trovare le coordfinate ma gia presenti in csv
-answer_state = screen.textinput(title ="Guess the state", prompt ="whats a State?")
-print (answer_state)
-turtle.mainloop()
-#TODO CONVERT GUESS TO TITLE CASE
-data = pd.read_csv ("./day25/finale/50_states.csv")
-print (data) 
+data = pandas.read_csv("./day25/finale/50_states.csv")
 all_states = data.state.to_list()
+guessed_states = []
 
-if answer_state in all_states:
-    t = turtle.Turtle()
-    t.hideturtle()
-    t.penup()
-    state_data = data[data.state == answer_state]
-    print (answer_state)
-    t.goto( int(state_data.x), int(state_data.y))
-    t.write(answer_state)
-
-#TODO CHECK IF THE GUESS IS AMONG 50 SSTATES
-    #
-#TODO WRITE CORRECT GUESSES ON MAP
-    #
-    #USE A LOOP TO ALLOW THE USER TO KEEP GUESSING
-#RECORD CORRECT GUESSES IN A LIST
-#KEEP TRACK OF THE SCORES
-
-
-
-
-
-
-#screen.exitonclick()
-
-
+while len(guessed_states) < 50:
+    answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct",
+                                    prompt="What's another state's name?").title()
+    if answer_state == "Exit":
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_states:
+                missing_states.append(state)
+        new_data = pandas.DataFrame(missing_states)
+        new_data.to_csv("states_to_learn.csv")
+        break
+    if answer_state in all_states:
+        guessed_states.append(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        state_data = data[data.state == answer_state]
+        t.goto(int(state_data.x), int(state_data.y))
+        t.write(answer_state)
