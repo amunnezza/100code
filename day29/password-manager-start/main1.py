@@ -2,7 +2,16 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def save():
+    website = website_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
 
+    with open("data.txt", "a") as data_file:
+        data_file.write(f"{website} || {email} || {password} \n")
+        website_entry.delete(0, END)
+        #email_entry.delete(0, END)
+        password_entry.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
 #INIZIA CON IMMAGINE 200 PER 200 IN UN CANVAS CON 20 DI PADDING SU TUTTI I LATI E LA WINDOW 
 #DEVE AVERE IL TITOLO PASSWORD MANAGER
@@ -27,13 +36,15 @@ website_entry = Entry(width=50)
 website_entry.grid(row=1, column=1, columnspan=2)
 email_entry = Entry(width=50)
 email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.insert(0, "luciociotola@gmail.com")
+
 password_entry = Entry(width=26)
 password_entry.grid(row=3, column=1)
 
 #Buttons
 generate_password_button = Button(text= "Generate Password")
 generate_password_button.grid(row=3, column=2)
-add_button = Button(text= "Add", width=36)
+add_button = Button(text= "Add", width=36, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 
 
