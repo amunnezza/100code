@@ -4,8 +4,17 @@ try:
     print (a_dict["nonEsiste"])
         
 except FileNotFoundError:
-    with open("./day30/NonEsiste1.txt", "a") as file3:
-        file3.write("prova di esecuzione\n")
-except KeyError:
-    a_dict["nonEsiste"] = "oraEsiste"
-    print (a_dict["nonEsiste"])
+    file = open("./day30/NonEsiste1.txt", "a") 
+    file.write("prova di esecuzione\n")
+# except KeyError:
+#     a_dict["nonEsiste"] = "oraEsiste"
+#     print (a_dict["nonEsiste"])
+except KeyError as error_message: 
+    print (f"the key {error_message} does not exist. Lo creo io")
+    a_dict[error_message] = "valoreNuovo"
+else:
+    content = file.read()
+    print (content)
+finally: 
+    file.close()
+    print ("file have been closed")
