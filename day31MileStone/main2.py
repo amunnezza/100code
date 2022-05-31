@@ -4,6 +4,7 @@ BACKGROUND_COLOR = "#B1DDC6"
 import pandas
 import random
 
+
 #1 apri il file csv e ogni riga parola e traduzione
 data = pandas.read_csv("./day31MileStone/data/french_words.csv")
 to_learn = data.to_dict(orient="records") #1-bis  osserva opzione orient per salvare in dict in formato che interessa
@@ -15,15 +16,18 @@ current_card = {}
 def next_card():
     #2 una volta creata la lista di dizionari al punto 1 ne prendi uno random e lo metti in punto 3
     global current_card
+    global flip_timer
+    window.after_cancel(flip_timer)
     current_card = random.choice(to_learn) 
-    print (current_card["French"])
+    #print (current_card["French"])
     canvas.itemconfig(card_title, text = "French", fill="black") #3 metti il titolo french
     canvas.itemconfig(card_word, text= current_card["French"], fill="black") #e sotto una parola random 
     canvas.itemconfig(card_background, image=card_front_img)
+    flip_timer = window.after(3000, func=flip_card)  #fa girare la carta dopo 3000 ms per ogni carta
 
 def flip_card():
     canvas.itemconfig (card_title, text="English", fill="white")
-    canvas.itemconfig( card_word, text = current_card["English "], fill = "white" )
+    canvas.itemconfig( card_word, text = current_card["English"], fill = "white" )
     canvas.itemconfig(card_background, image=card_back_img ) 
 
 
@@ -32,11 +36,11 @@ window = Tk()
 window.title("Flashy")  
 window.config (padx=50, pady=50, bg=BACKGROUND_COLOR) #4
 
-window.after(3000, func=flip_card)  #fa girare la carta dopo 3000 ms
+flip_timer = window.after(3000, func=flip_card)  #fa girare la carta dopo 3000 ms
 
 canvas = Canvas(width=800, height=526)
-card_front_img = PhotoImage("./day31MileStone/images/card_front.png") 
-card_back_img = PhotoImage("./day31MileStone/images/card_back.png") 
+card_front_img = PhotoImage(file="./day31MileStone/images/card_front.png") 
+card_back_img = PhotoImage(file="./day31MileStone/images/card_back.png") 
 card_background = canvas.create_image(400, 263, image=card_front_img) #
 
 #3 crea variabili in cui mettere il frutto di next card 
