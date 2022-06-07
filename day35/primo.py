@@ -5,8 +5,14 @@ weather_params = {
     "lat":42.051781,
     "lon":12.617040,
     "appid":api_key,
+    "exclude":"current,minutely,daily"
 }
 response = requests.get(OWM_endpoint, params=weather_params)
-print(response.status_code)
+#print(response.status_code) di test per verificare 200
+
+weather_data = response.json()
+print (weather_data)
+
+
 
 
