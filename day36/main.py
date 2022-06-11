@@ -84,11 +84,13 @@ if diff_percent > 0.8 :
         
     #TODO 9. - Send each article as a separate message via Twilio.
     
-        message = client.messages.create(
-                body=article, 
-                from_= '+15013226175',
-                to='+39 331 360 8213'
-            )
+         message = client.messages \
+        .create(
+            body=article, 
+            from_= '+15013226175',
+            to='+39 331 360 8213'
+        )
+        
        
     
 
