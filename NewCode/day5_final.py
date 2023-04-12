@@ -49,6 +49,7 @@ while len_password != 0:
         list_rimanenze[2] = list_rimanenze[2] -1  
     else:
         continue
+        
 
 print (password1)
         
