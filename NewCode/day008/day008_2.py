@@ -20,4 +20,7 @@ def prime_checker(number):
 prime_checker(n)
 #test
 
+for number in range(1,11):
+    prime_checker(number)
+
 
