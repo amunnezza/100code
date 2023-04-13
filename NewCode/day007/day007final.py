@@ -4,7 +4,7 @@ import random
 from replit import clear
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 #Delete this line: word_list = ["ardvark", "baboon", "camel"]
-from hangman_words import word_list #risolve
+from hangman_words import word_list #risolve se trova il file nella sua directory
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
