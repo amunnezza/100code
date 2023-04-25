@@ -7,5 +7,5 @@ table = PrettyTable()  #12 creato oggetto gia qui stampa qualcosa
 table.add_column ("Pokemon Name ", ["Pikachu", "Squirtie", "Charmander"]) #13 leggi doc per capire come funzionap
 table.add_column("Type", ["Electric", "Water", "Fire"])
 #13puoi cambiare gli attributi? SI VEDI SOTTO 
-table.align = "l"  #ACCEDI E CAMBIA
+table.align = "r"  #ACCEDI E CAMBIA
 print (table)
