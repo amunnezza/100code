@@ -18,9 +18,10 @@
 # utente_1.username = "luciano"
 # print (utente_1.id)     
 #ma se per ogni object devi creare sempre le stesse attribute?
-#5 entra in gioco constructo per starting point 
+#5 entra in gioco constructor per starting point 
 #initialize 
-#constructor is a special function and python know this because this method have double underscore
+#constructor is a special function and python know this because this method 
+#have double underscore
 #to beginning and end. Is something like this
 class Car:
     def __init__(self, seats):
