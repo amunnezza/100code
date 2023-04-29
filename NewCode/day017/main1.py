@@ -56,7 +56,7 @@ class User :
         self.username = username
         self.follower = 0
         self.following = 0
-    def follow (self, user):   #nota che self ci va sempre cosi il metodo sa che deve laroare sulloggetto
+    def follow (self, user):   #nota che self ci va sempre cosi il metodo sa che deve lavoare sull oggetto
         """vuole come parametro un utente della Classe User da seguire""" 
         user.follower +=1
         self.following += 1 #incrementa di uno i follower di quello che segui e aumenti il tuo numero

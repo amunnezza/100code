@@ -1,4 +1,5 @@
-from menu import Menu, MenuItem   #iniziato importando le classi che mi intressano per risolver l'esercizion
+from menu import Menu, MenuItem   #iniziato importando le classi che mi intressano per risolvere
+                                  #l'esercizio
 from coffee_maker import CoffeeMaker    #sono documentate 
 from money_machine import MoneyMachine
 
@@ -35,6 +36,6 @@ while is_on:
 ##osservazione finale 
 #facilitato la lettura del codice e senza spaghetti da tutte le parti
 
-
+#torna a cherryTree
 
 
