@@ -20,7 +20,14 @@ def draw_spirograph(size_of_gap):
 
 # qui fai il primo test
 #proviamo a cambiare heading
-draw_spirograph(4)
+tim.pu()
+tim.backward(200)
+tim.pd()
+draw_spirograph(8)
+tim.pu()
+tim.forward(400)
+tim.pd()
+draw_spirograph(8)
 
 screen = t.Screen()
 
