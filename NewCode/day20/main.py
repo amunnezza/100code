@@ -1,8 +1,8 @@
 from turtle import Turtle, Screen
 import time
 screen = Screen()
-screen.setup( width= 600, height = 600)
-screen.bgcolor("black") 
+screen.setup( width= 600, height = 600)  #video 183
+screen.bgcolor("black")   #video 183
 screen.title("My snake game")
 screen.tracer(0) # annulla aggiornamento continuo
 
