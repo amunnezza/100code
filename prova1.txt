@@ -1,0 +1,1 @@
+prova funzionamento bash su windows
