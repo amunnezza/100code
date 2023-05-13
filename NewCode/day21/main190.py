@@ -13,10 +13,11 @@ class Fish(Animal):
     
     def breathe(self): #overload ??? aggiunta funzionalita
         super().breathe()   #ha quello che ha la superclass
-        print ("doing it underwater")   # e quisto lo sovraccarichi
+        print ("doing it underwater")   # e questo lo sovraccarichi
+
 nemo = Fish()
 
 nemo.swim()
 nemo.breathe()
-print (nemo.num_eyes)
+print (f"il numero di occhi e' {nemo.num_eyes}")
 #torna a cherrytree
