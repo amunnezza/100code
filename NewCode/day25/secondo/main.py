@@ -3,7 +3,7 @@ fur_colour e Count come colonne"""
 import pandas as pd
 
 #la partenza è la colonna PrimaryFurColor
-data = pd.read_csv("./day25/secondo/squirrel.csv" )
+data = pd.read_csv("./NewCode/day25/secondo/squirrel.csv" )
 print (data["Primary Fur Color"])
 gray_squirrels = data [data["Primary Fur Color"] == "Gray"]
 gray_squirrels_count = len (gray_squirrels)
@@ -21,4 +21,4 @@ data_dict = {
 }
 
 df = pd.DataFrame (data_dict)
-df.to_csv ("./day25/secondo/squirrelCount.csv")
+df.to_csv ("./NewCode/day25/secondo/squirrelCount.csv")
