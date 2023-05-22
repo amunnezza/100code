@@ -19,10 +19,13 @@
 
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
+import os 
+os.chdir('./NewCode')  #porti a directory di lavoro
 
 #TODO 1. Create a dictionary in this format:
-import pandas as pd
 #{"A": "Alfa", "B": "Bravo"}
+import pandas as pd
+
 data_frame = pd.read_csv("./day26/natoAlfabeth/nato.csv")
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 #print (data_frame)
