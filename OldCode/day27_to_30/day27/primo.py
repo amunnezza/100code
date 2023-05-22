@@ -9,7 +9,7 @@ window.minsize( width= 500, height= 300)
 #crearlo e poi vedere dove posizionarlo
 my_label = tkinter.Label(text = "I m a label", font=("Arial", 24,"bold"))
 #creato la label
-my_label.pack() # lo posizioni al centro
+my_label.pack() # lo posizioni al centro alla prima riga disponibile
 
 
 
