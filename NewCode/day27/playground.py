@@ -9,6 +9,8 @@ def funzione (*args):
 funzione ("aspo", 2, 3, "quante ne voglio")
 
 
+
+
 def add (*args):
     somma = 0
     for number in args:
@@ -17,6 +19,14 @@ def add (*args):
 
 
 print (add(1, 2, 3, 4))
+
+def stampa_primo_terzo (*args):
+    print (args    [0])
+    print (args[2])
+
+stampa_primo_terzo(1,2,4,16)
+
+ #inizio video 249
 
 def prova (**kwargs):
     print (kwargs)
@@ -31,6 +41,7 @@ def calculate (n,**kwargs):
    
 print (calculate (2,add = 3, multiply = 5))
 
+
 class Car:
     def __init__(self, **kwargs):
         self.made = kwargs["made"]
@@ -39,7 +50,8 @@ class Car:
 macchina = Car(made= "kia", model="stonic")
 print (macchina.made)
 print (macchina.model)
-
+# macchina2 = Car()        #questo da errore perchè non trova gli argomenti made e model previsti
+# print (macchina2.model)
 # *args: Positional Variable-Length Arguments
 def add(*args):
     # print(args[1])
@@ -63,14 +75,14 @@ def calculate(n, **kwargs):
 calculate(2, add=3, multiply=5)
 
 # How to use a **kwargs dictionary safely
-class Car:
 
+class Car:
     def __init__(self, **kw):
         self.make = kw.get("make")
         self.model = kw.get("model")
         self.colour = kw.get("colour")
         self.seats = kw.get("seats")
 
-my_car = Car(make="Nissan", model="Skyline")
+my_car = Car(make="Nissan", model="Skyline")  #non da errori usando get() e crea oggetto
 print(my_car.model)
 

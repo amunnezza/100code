@@ -26,8 +26,9 @@ my_label.config(padx=50, pady=50)
 new_label = Label(text =  "I am a new label ", font= ("helvetica", 21, "bold"))
 new_label.grid (column = 3,row = 3)
 
-#Button
-button = Button(text="Click Me", command=button_clicked)
+#Button per sua natura è listener e quando percepisce click esegue il command
+#ovvero il nome della funzione 
+button = Button(text="Click Me", command=button_clicked)   
 button.grid(column=1, row=1)
 
 new_button = Button(text="New Button", command=new_button_clicked)
