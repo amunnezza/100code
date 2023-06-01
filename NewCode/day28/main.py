@@ -71,8 +71,8 @@ def count_down(count):
 
 
 # ---------------------------- UI SETUP  prima fase da fare------------------------------- #
-window = Tk()
-window.title("Pomodoro")
+window = Tk()  # **1** primo inserisci una finestra con il relativo mainloop sotto per chiudere
+window.title("Pomodoro") #**2** gli dai un titolo
 window.config(padx = 100, pady= 50, bg= YELLOW) #terza fase di padding E 5 DI BACKGROUND
 
 
@@ -83,14 +83,22 @@ def say_something(thing):
 title_label = Label(text = "Timer", fg= GREEN, bg= YELLOW, font= (FONT_NAME, 50) )
 title_label.grid(column=1, row=0)
 
-#per inserire immagine usa canvas 
-canvas = Canvas(width= 204, height=224, bg = YELLOW, highlightthickness=0)    #guardando grandezza dell'imagine
-tomato_img = PhotoImage (file ="./day28/tomato.png" )  #necessario a creare un argomento valido per il metodo create_image sotto 
-canvas.create_image(103, 112, image = tomato_img )  #messo a meta e nota che non accetta il file immagine 
-                                        #ma una elaborzione dell'immagine
+# **3** per inserire immagine usa canvas 
+# canvas tela dove puoi mettere una cosa sopra l'altra in layer
+# nel nostro caso metti un immagine e un testo sopra l'immagine
+# per farlo con l'oggetto canvas usi il metodo create_image e create_text 
+canvas = Canvas(width= 204, height=224, bg = YELLOW, highlightthickness=0)
+#guardando grandezza dell'imagine
+#per usare create_image usa un immagine sul 
+tomato_img = PhotoImage (file ="./NewCode/day28/tomato.png" )  #necessario a creare un argomento valido per il metodo create_image sotto 
+canvas.create_image(103, 112, image = tomato_img )  #messo a meta e nota che 
+                                                    #NON ACCETTA IL FILE IMMAGINE 
+                                                    #ma una elaborzione dell'immagine
 #4 fase inserisci testo 
 timer_text = canvas.create_text(103, 130, text = "00:00", fill = "white", font = (FONT_NAME, 35, "bold"))
-#usa color hunt per palette of color
+#usa color hunt per palette of color https://colorhunt.co/ 
+#LA PALETTA DI COLORI LA METTE NELLE COSTANTI
+
 #count_down(5)
 start_button = Button(text="Start", command=start_timer )
 start_button.grid(column=0, row=2)
