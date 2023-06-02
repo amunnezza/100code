@@ -50,12 +50,12 @@ def start_timer ():
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 # DA QUI INIZIA LE FUNZIONALITA. principio base è che programma segue costantemente eventi
 #e reagisce di conseguenza. Per seguire quello che avviene e reagire a un evento usa
-#window.after() che va nella sezxione di window
+# window.after() che va nella sezione di window
 def count_down(count):
     count_min = math.floor (count / 60)
     count_sec = count % 60
     if count_sec <10:
-        count_sec = f"0{count_sec}" #dynamic typing
+        count_sec = f"0{count_sec}" # **dynamic typing**
     canvas.itemconfig(timer_text, text= F"{count_min}:{count_sec}")
     print(count)
     if count > 0:
@@ -66,7 +66,7 @@ def count_down(count):
 # count = 5
 # while True:
 #     time.sleep(1)
-#     count -=1  
+#     count -1  
 #quanto sopra è quello che per principio dovrebbe avvenire
 
 
