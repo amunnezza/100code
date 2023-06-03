@@ -1,0 +1,23 @@
+from tkinter import *
+window = Tk()
+#versione sbagliata
+#r= label (bg="red", width = 20 , height = 5)
+#r.grid (row = 0, colum = 0)
+#g = label (bg = "green", width = 20 , height = 5)
+#g.grid(row = 1, column = 1)
+#b= label (bg="blue", width = 40 , height = 5)
+#r.grid (row = 2, colum = 0)
+#è sbagliata perche la blue non si mette sotto la green e occupa due
+#spazi ma semplivemte allarga tutta la colonna 0 di 40 
+#per cui aanche la label rossa rimane di 20 e si mette al centro
+
+#LA SOLUZIONE è 
+r= Label (bg="red", width = 20 , height = 5)
+r.grid (row = 0, column = 0)
+g = Label (bg = "green", width = 20 , height = 5)
+g.grid(row = 1, column = 1)
+b= Label (bg="blue", width = 40 , height = 5)
+b.grid (row = 2, column = 0, columnspan = 2)
+
+window.mainloop()
+

@@ -7,6 +7,7 @@ import os
 # ---------------------------- UI SETUP ------------------------------- #
 #INIZIA CON IMMAGINE 200 PER 200 IN UN CANVAS CON 20 DI PADDING SU TUTTI I LATI E LA WINDOW 
 #DEVE AVERE IL TITOLO PASSWORD MANAGER
+#continuando mette le interfacce usando grid e grid span per disporle
 
 window = Tk()
 window.title("Password Manager")
