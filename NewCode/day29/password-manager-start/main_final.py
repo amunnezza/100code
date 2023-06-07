@@ -1,7 +1,9 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+import os
 import pyperclip
+working_dir = os.path.realpath(os.path.dirname(__file__))
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 #Password Generator Project
 def generate_password():
@@ -36,7 +38,7 @@ def generate_password():
     #   password += char
     password = "".join(password_list)
     password_entry.insert(0,password)
-    pyperclip.copy(password)
+    pyperclip.copy(password) #LA COPIA IN APPUNTI
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     website = website_entry.get()
@@ -48,7 +50,7 @@ def save():
         is_ok = messagebox.askokcancel(title=website, message=f"Questi sono i dettagli\n"
                                     f"Website: {website} \nEmail: {email}\nPassword: {password}\nTi va bene?")
         if is_ok:
-            with open("data.txt", "a") as data_file:
+            with open(working_dir + "/data.txt", "a") as data_file:
                 data_file.write(f"{website} || {email} || {password} \n")
                 website_entry.delete(0, END)
             #email_entry.delete(0, END)
@@ -65,7 +67,7 @@ window.title("Password Manager")
 window.config(padx = 50, pady=50)
 
 canvas = Canvas(height=200, width=200)
-logo_img = PhotoImage(file="./day29/password-manager-start/logo.png")
+logo_img = PhotoImage(file= working_dir + "/logo.png")
 canvas.create_image(100, 100, image= logo_img)
 # esclusoo perchè usi grid canvas.pack() quindi devi mettere canvas in the grid
 canvas.grid(row=0, column=1)
