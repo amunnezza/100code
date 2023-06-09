@@ -15,9 +15,9 @@ total_likes = 0
 for post in facebook_posts:
     try:
         total_likes = total_likes + post['Likes']
-    except KeyError:
+    except KeyError:  #questa è la soluzione semplicemente passi
         #post['Likes'] = 0
         pass
 
 
-print(total_likes)
+print(f"il numero di likes totali è {total_likes}")

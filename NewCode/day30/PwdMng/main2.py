@@ -3,6 +3,9 @@ from tkinter import messagebox
 from random import choice, randint, shuffle
 import pyperclip
 import json
+import os
+print (os.getcwd())
+working_dir = os.path.realpath(os.path.dirname(__file__))
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 #Password Generator Project
@@ -41,19 +44,19 @@ def save():
         messagebox.showinfo(title="Oops", message="Please make sure you haven't left any fields empty.")
     else:
         try:
-            with open("data.json", "r") as data_file:
+            with open(working_dir+"/data.json", "r") as data_file:
                 #update avviene in tre fasi
                 #Read old data
                 data = json.load(data_file)  #converte in python dictionary
                 #update old data with new data
                 data.update(new_data) 
         except FileNotFoundError:
-            with open("data.json", "w") as data_file:
+            with open(working_dir + "/data.json", "w") as data_file:
                 json.dump(new_data, data_file, indent=4)
         else:
             #save updated data but require you open in write mode
             data.update(new_data)
-            with open("data.json", "w") as data_file:
+            with open(working_dir+"/data.json", "w") as data_file:
                 json.dump(data, data_file, indent=4)
         finally:
             #print(data)
@@ -63,7 +66,7 @@ def save():
 def find_password():
     website = website_entry.get()
     try:
-        with open("data.json") as data_file: 
+        with open(working_dir+"/data.json") as data_file: 
             data = json.load(data_file)
     except FileNotFoundError:
         messagebox.showinfo(title = "Error", message="Data File Not Found")
@@ -84,7 +87,7 @@ window.title("Password Manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(height=200, width=200)
-logo_img = PhotoImage(file="./day30/PwdMng/logo.png")
+logo_img = PhotoImage(file= os.path.realpath(os.path.dirname(__file__))+"/logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
