@@ -21,3 +21,10 @@ except: #se non c e apri in scrittura che lo crea in auto
 # IndexError
 # fruit_list = ["banana", "mela", "arancia"]
 # print (fruit_list[3])
+
+#type error
+
+text= "abx"
+print (text + 5)
+
+
