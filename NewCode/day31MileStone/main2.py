@@ -3,10 +3,13 @@ from tkinter import *
 BACKGROUND_COLOR = "#B1DDC6"
 import pandas
 import random
+import os
+working_dir = os.path.realpath(os.path.dirname(__file__))
+os.chdir(working_dir) #ladirectory di lavoro ora è dove si trova il file
 
 
 #1 apri il file csv e ogni riga parola e traduzione
-data = pandas.read_csv("./day31MileStone/data/french_words.csv")
+data = pandas.read_csv("./data/french_words.csv")
 to_learn = data.to_dict(orient="records") #1-bis  osserva opzione orient per salvare in dict in formato che interessa
 #di base una lista di dizionari e ogni dizionario ha due chiavi French e English con dati la stessa parola 
 #in french and english appunto
@@ -39,8 +42,8 @@ window.config (padx=50, pady=50, bg=BACKGROUND_COLOR) #4
 flip_timer = window.after(3000, func=flip_card)  #fa girare la carta dopo 3000 ms
 
 canvas = Canvas(width=800, height=526)
-card_front_img = PhotoImage(file="./day31MileStone/images/card_front.png") 
-card_back_img = PhotoImage(file="./day31MileStone/images/card_back.png") 
+card_front_img = PhotoImage(file="./images/card_front.png") 
+card_back_img = PhotoImage(file="./images/card_back.png") 
 card_background = canvas.create_image(400, 263, image=card_front_img) #
 
 #3 crea variabili in cui mettere il frutto di next card 
@@ -49,11 +52,11 @@ card_word = canvas.create_text(400, 263, text="", font=("Ariel", 60, "bold"))#
 canvas.config (bg=BACKGROUND_COLOR, highlightthickness=0) # 
 canvas.grid(row=0, column=0, columnspan=2) #
 
-cross_image = PhotoImage(file="./day31MileStone/images/wrong.png") #
+cross_image = PhotoImage(file="./images/wrong.png") #
 unknown_button = Button(image=cross_image, command=next_card)  #
 unknown_button.grid(row=1, column=0)#
 
-check_image = PhotoImage(file="./day31MileStone/images/right.png") #
+check_image = PhotoImage(file="./images/right.png") #
 known_button = Button(image=check_image, command=next_card) #ai button dai un comando da eseguire
 known_button.grid(row=1, column=1)  
 
