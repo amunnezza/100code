@@ -1,7 +1,7 @@
 """
 1   objective : send a motivational quote via email on the current day of week
     - use datetime to check current day of week
-    - openn motivational text file for a list of quotes
+    - open motivational text file for a list of quotes
     - use random to take a random quotes
     - finally use smtplib to send the email 
     
