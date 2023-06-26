@@ -10,9 +10,14 @@ import datetime as dt
 from multiprocessing import connection
 import smtplib
 import random
+import os
+
+#settaggio directory di lavori
+working_dir = os.path.realpath(os.path.dirname(__file__))
+os.chdir(working_dir)
 
 MY_EMAIL = "l.ciotola58@gmail.com"
-MY_PASSWORD = "Iaggymle12i!"
+MY_PASSWORD = "uirsncxbgpdcffus" #"Iaggymle12i!"
 
 
 now = dt.datetime.now()
@@ -21,8 +26,8 @@ year = now.year
 month = now.month
 day = now.day
 week_day = now.weekday()
-if week_day == 2:
-    with open("./day32/quotes.txt") as quote_file:
+if week_day == 6:
+    with open("./quotes.txt") as quote_file:
         all_quotes = quote_file.readlines()
         quote = random.choice(all_quotes)
     print (quote)
