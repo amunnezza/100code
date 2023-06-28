@@ -24,7 +24,7 @@ year = now.year
 month = now.month
 day = now.day
 week_day = now.weekday()
-if week_day == 6:
+if week_day == 2:   # da 0 a 6 da lunedi a domenica
     with open("./quotes.txt") as quote_file:
         all_quotes = quote_file.readlines()
         print (type(all_quotes))
