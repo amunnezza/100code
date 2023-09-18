@@ -1,25 +1,33 @@
-<!-- In linea di massima ricorda che HTML is for structure 
+<!-- SEGUITO DI INDEX.HTML PER NUOVI CONCETTI
+    In linea di massima ricorda che HTML is for structure 
 CSS is for Style and Javascript is for behavior-->
+<!-- 001 PROVIAMO A DARE UN PO DI STRUTTURA USANDO TABLE-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This include even emojii and many vocabularies can found at https://unicode-table.com-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ◑ Luciano's personal site </title>
 </head>
 <body>
-   <!-- 001 iniziamo a strutturare il testo metterndo per primo il testo-->
-   <h1>Luciano Ciotola</h1>
-   <a img=" ciotola.jpeg" ></a>
-   <img  src = "ciotola.jpeg" alt = "immagine mia" > 
-   <!-- 002 Attento a indentazione-->
-   <p><em>Analista forense presso Raggruppamento Investigazione Scientifiche</em></p>
-   <!-- attenzxione a uso em i strong b -->
-   <p>Sono un informatico, elettronico. Mi piace il caffe </p>
+    <!--002 PROVIAMO A METTTERE LA IMMAGINE DI FIANCO AL NOME e caratteristiche
+         SENZA USARE CSS PER ORA.
+        Aggiunto anche un po di cellspacing-->
+    <table cellspacing = "20">
+    <tr>
+        <td><h1>Luciano Ciotola</h1>
+            <p><em>Analista forense presso Raggruppamento Investigazione Scientifiche</em></p>
+            <p>Sono un informatico, elettronico. Mi piace il caffe </p>
+        </td>
+        <td><a img=" ciotola.jpeg" ></a>
+            <img  src = "ciotola.jpeg" alt = "immagine mia" > 
+        </td>
+    </tr>    
+    </table>
+   
+   
    <hr>
-   <!-- 03 seguono alcune liste-->
    <h3>Corsi seguiti </h3>    
    <ul>
     <li>Ai in coursera</li>
@@ -32,17 +40,15 @@ CSS is for Style and Javascript is for behavior-->
     <li>Books</li>
     <li>Yn altro per prova</li>
  </OL>
+
  <h3>Esperienze di lavoro </h3>
  <p>Tecnico di laboratorio presso Laboratorio Telematico Carabinieri</p>
  <p></p>
- <!--004 da qui usa un po di table-->
- <!-- osserva che table hanno anche headers body and footers cosi 
-  da simulare in qualche modo una pagina html dentro la pagina principale-->
+    
  
   <table>
-   <thead>  <!-- mettiamo alcune celle nell header che saranno in grassetto di default
-                  ed avranno funzione di titolo della tabella. Sono celle del tipo th-->
-      <th>
+   <thead>  
+    <th>
          Date
       </th>
       <th>
@@ -59,8 +65,8 @@ CSS is for Style and Javascript is for behavior-->
    <tfoot>
 
    </tfoot>
-   <tr> <!-- 005 riga -->
-      <td>1994 - 2001</td> <!-- 006 una cella  OSSERVAZIONE NELLA TABELLA NON ESISTE COLONNA!!!-->
+   <tr> 
+      <td>1994 - 2001</td>
       <td>Tecnico addetto alla riparazione Radio G400</td>
    </tr>
    <tr>
@@ -77,6 +83,26 @@ CSS is for Style and Javascript is for behavior-->
 </tr>
 </table>
 
+<table cellspacing = "15">
+<h3> Skills</h3>
+<tr>
+    <td>Gestione Sistemi</td>
+    <td>🔥🔥🔥🔥🔥</td>
+</tr>
+
+<tr>
+    <td>SQL e Database</td>
+    <td>🔥🔥🔥🔥</td>
+</tr>
+
+<tr>
+    <td>Programmazione Python</td>
+    <td>🔥🔥🔥</td>
+</tr>
+</table>
+<hr>
+    <a href="hobbies.html">My Hobbies</a>
+    <a href="contact-me.html">Contact Me</a>
  
 </body>
 </html>
